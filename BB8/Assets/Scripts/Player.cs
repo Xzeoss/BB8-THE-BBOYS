@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 		grounded = true;
 
 	}
@@ -20,10 +20,14 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 	
 		Vector3 pos = transform.position;
+
+		//handles left right movement
 		if(Input.GetKey (KeyCode.LeftArrow))
 			pos.x -= moveSpeed * Time.deltaTime;
 		if (Input.GetKey (KeyCode.RightArrow))
 			pos.x += moveSpeed * Time.deltaTime;
+
+		//handles the jump
 		if (Input.GetKey (KeyCode.UpArrow) && grounded) {
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpHeight, ForceMode2D.Impulse);
 			grounded = false;
@@ -35,6 +39,7 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 
+		//when the player touches a platform it resets jump
 		if(col.gameObject.tag == "Platform" || col.gameObject.tag == "Respawn"){
 
 			grounded = true;

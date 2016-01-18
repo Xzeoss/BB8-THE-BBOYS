@@ -8,11 +8,10 @@ public class GM : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		platforms = GameObject.FindGameObjectsWithTag ("Platform");
+		platforms = GameObject.FindGameObjectsWithTag ("Platform");	//an array of all the platforms in game
 		for(int i = 0; i < platforms.Length; i++){
-
-			if(platforms[i].GetComponent<Platform>().colour != 'N');
-				platforms [i].GetComponent<Platform> ().turnOff ();
+			
+			platforms [i].GetComponent<Platform> ().turnOff ();	//sets them all to "off"
 
 		}
 
@@ -27,15 +26,16 @@ public class GM : MonoBehaviour {
 
 			for(int i = 0; i < platforms.Length; i++){
 				 
-				curPlatform = platforms [i].GetComponent<Platform> ();
+				curPlatform = platforms [i].GetComponent<Platform> ();	//accessing the platform script
+				//thats attached to each platform object
 
-				if(curPlatform.colour == 'B' || curPlatform.colour == 'N'){
+				if(curPlatform.colour == 'B'){	//turns on all blue platforms
 					
-					curPlatform.turnOn ();
+					curPlatform.turnOn ();	
 
 				}else{
 
-					curPlatform.turnOff ();
+					curPlatform.turnOff ();	//turn the rest off
 
 				}
 
@@ -99,7 +99,7 @@ public class GM : MonoBehaviour {
 			}
 
 		}
-		if(Input.GetKeyDown (KeyCode.A) ){
+		if(Input.GetKeyDown (KeyCode.A) ){	//turns on all platforms
 
 			for(int i = 0; i < platforms.Length; i++){
 
