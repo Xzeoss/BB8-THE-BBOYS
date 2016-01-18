@@ -99,6 +99,16 @@ public class GM : MonoBehaviour {
 			}
 
 		}
+		if(Input.GetKeyDown (KeyCode.A) ){
+
+			for(int i = 0; i < platforms.Length; i++){
+
+				platforms [i].GetComponent<Platform> ().turnOn ();
+
+			}
+		} //turns all on
+
+
 
 	}
 }
