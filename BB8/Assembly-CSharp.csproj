@@ -45,14 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\2DLightAssets\Scripts\2DLight\DynamicLight.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch2.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\rotate.cs" />
      <Compile Include="Assets\Scripts\GM.cs" />
      <Compile Include="Assets\Scripts\Platform.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Spikestrip.cs" />
+     <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
+     <None Include="Assets\2DLightAssets\Shaders\NoTexture.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="pseudoSinCos">
+ <HintPath>/Users/Tesla/Documents/BB8-THE-BBOYS/BB8/Assets/2DLightAssets/Scripts/Helpers/pseudoSinCos.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
