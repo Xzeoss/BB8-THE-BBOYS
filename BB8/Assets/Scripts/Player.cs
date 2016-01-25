@@ -3,13 +3,12 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float moveSpeed;
+	public float moveSpeed;	//horizontal movespeed
 	public float jumpHeight;
-	public float rotSpeed;
-	public int gravity; //positive gravity is true
-	bool posRot;	//sets the rotation direction based on movement when jumping
-	bool grounded;
-	Vector3 startPos;
+	public int gravity;
+	bool grounded;	//detects if player has touched the ground to jump again
+					//switch to raycast
+	Vector3 startPos;	//position used for resetting the level
 
 	// Use this for initialization
 	void Start () {
@@ -25,15 +24,12 @@ public class Player : MonoBehaviour {
 	
 		Vector3 pos = transform.position;
 
-		//handles left right movement
+		//handles left/right movement
 		pos.x += Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
-		if (Input.GetAxis ("Horizontal") < 0)
-			posRot = false;
-		if (Input.GetAxis ("Horizontal") > 0)
-			posRot = true;
 
 		//handles the jump
 		if (Input.GetKey (KeyCode.UpArrow) && grounded) {
+			//add raycast code here
 			GetComponent<Rigidbody2D> ().AddForce (new Vector2(0, gravity) * jumpHeight, ForceMode2D.Impulse);
 			grounded = false;
 		}
@@ -44,10 +40,11 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 
-			grounded = true;
+			grounded = true;	//switch to raycast on keypress
 
 	}
 
+	//called when player dies
 	public void resetLocation(){
 
 		transform.position = startPos;

@@ -3,24 +3,38 @@ using System.Collections;
 
 public class Platform : MonoBehaviour {
 
-	public char colour;
-	[SerializeField]
-	Sprite[] platformSprites;
+	public bool moving;	//if the platform is a moving platform
+	public bool dir;	//true is positive x movement, false is negative x movement
+	public Vector3 startPos;
+	public Vector3 endPos;
+	public float moveSpeed;
 
-	public void turnOff(){
+	void Start(){
 
-		//turn off collider
-		//switch sprite to transparent
-
-		GetComponent<BoxCollider2D>().enabled = false;	//turns off the box collider
-		GetComponent<SpriteRenderer> ().sprite = platformSprites [1]; //changes sprite to transparent
+		transform.position = startPos;	//sets the start position for moving platforms. 
+		if ((startPos.x - endPos.x) < 0)
+			dir = true;	//sets the initial direction of the platform
 
 	}
 
-	public void turnOn(){
+	void Update(){
 
-		GetComponent<BoxCollider2D>().enabled = true;	//turns on the box collider
-		GetComponent<SpriteRenderer> ().sprite = platformSprites [0];	//changes sprite to opaque
+		if (moving) {	
+
+			Vector3 pos = transform.position;
+
+			if (dir)
+				pos.x += moveSpeed * Time.deltaTime;
+			else
+				pos.x -= moveSpeed * Time.deltaTime;
+			if (pos.x > endPos.x)	//switches direction
+				dir = false;
+			if (pos.x < startPos.x)	//switches direction
+				dir = true;
+
+			transform.position = pos;
+
+		}
 
 	}
 
