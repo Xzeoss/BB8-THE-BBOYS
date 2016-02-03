@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	bool grounded;	//detects if player has touched the ground to jump again
 					//switch to raycast
 	Vector3 startPos;	//position used for resetting the level
+	GameObject[] platforms;	//array of platforms to change colour
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour {
 		grounded = true;
 		gravity = 1;
 		startPos = transform.position;
+		platforms = GameObject.FindGameObjectsWithTag ("Platform");	//builds list of all platforms
 
 	}
 	
@@ -49,5 +51,17 @@ public class Player : MonoBehaviour {
 
 		transform.position = startPos;
 
+	}
+
+	public void resetColors(){
+		Color c = Color.grey;
+		for(int i = 0; i < platforms.Length; i++){
+			platforms [i].GetComponent<SpriteRenderer> ().color = c;
+		}
+
+	}
+
+	public void resetReality(){
+		
 	}
 }
