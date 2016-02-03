@@ -29,6 +29,7 @@ public class GM : MonoBehaviour {
 				changePlatforms (Color.grey);	//changes map colour to grey
 		}
 		if (Input.GetKeyDown (KeyCode.S)) { //switches size to larger
+			
 			if(player.transform.localScale == Vector3.one){	//checking to see if normal size
 				player.transform.localScale *= 2;	//doubles player size
 				changePlatforms (Color.red); 	//changes map colour to red

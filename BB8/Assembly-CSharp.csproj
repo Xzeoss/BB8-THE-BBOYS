@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Platform.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Spikestrip.cs" />
+     <Compile Include="Assets\SwingingAxe.cs" />
      <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
      <None Include="Assets\2DLightAssets\Shaders\NoTexture.shader" />
  <Reference Include="UnityEngine.UI">
