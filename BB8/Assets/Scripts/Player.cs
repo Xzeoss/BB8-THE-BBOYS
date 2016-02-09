@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 					//switch to raycast
 	Vector3 startPos;	//position used for resetting the level
 	GameObject[] platforms;	//array of platforms to change colour
+	GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -48,12 +49,12 @@ public class Player : MonoBehaviour {
 
 	//called when player dies
 	public void resetLocation(){
-
 		transform.position = startPos;
 
 	}
 
 	public void resetColors(){
+		//reverts all the colors of the platforms to grey
 		Color c = Color.grey;
 		for(int i = 0; i < platforms.Length; i++){
 			platforms [i].GetComponent<SpriteRenderer> ().color = c;
