@@ -1,0 +1,7 @@
+-each colour represents a different phyics property
+	-grey - normal physics
+	-yellow - gravity is reversed
+	-red - player gets bigger
+	-pink - player gets smaller
+-each person designs one map
+ 

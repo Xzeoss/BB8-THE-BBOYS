@@ -13,6 +13,7 @@ public class Spikestrip : MonoBehaviour {
 			Player pl = col.gameObject.GetComponent<Player> ();
 			pl.resetLocation();
 			pl.resetColors ();
+			pl.resetReality ();
 		}
 
 	}
