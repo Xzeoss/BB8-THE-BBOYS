@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Rob.unity
-  isLoaded: 1
-  isActive: 1
