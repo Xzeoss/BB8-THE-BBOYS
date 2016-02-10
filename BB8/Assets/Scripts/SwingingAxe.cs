@@ -20,7 +20,7 @@ public class SwingingAxe : MonoBehaviour {
 		//to ensure that the swinging axe doesnt switch early
 		transform.Rotate (new Vector3 (0, 0, dir) * rotSpeed * Time.deltaTime);
 		print (transform.rotation.z);
-		if (transform.rotation.z > .707 || transform.rotation.z < 0)
+		if (transform.rotation.z > .7071608 || transform.rotation.z < 0)
 			dir *= -1;
 
 	}
@@ -30,8 +30,7 @@ public class SwingingAxe : MonoBehaviour {
 		if(col.gameObject.tag == "Player"){
 
 			Player pl = col.gameObject.GetComponent<Player> ();
-			pl.resetLocation ();
-
+			pl.onDeath ();
 		}
 
 	}

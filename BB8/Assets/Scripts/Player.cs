@@ -65,4 +65,11 @@ public class Player : MonoBehaviour {
 	public void resetReality(){
 		
 	}
+
+	public void onDeath(){
+		resetColors ();
+		resetLocation ();
+		resetReality ();
+
+	}
 }
